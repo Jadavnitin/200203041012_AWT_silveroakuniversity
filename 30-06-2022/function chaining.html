@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Example of jQuery Method Chaining</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style>
+/* Some custom styles to beautify this example */
+p {
+    width: 150px;
+	padding: 50px 0;
+	font: bold 24px sans-serif;
+	text-align: center;
+    background: red;
+    border: 1px solid blue;
+    box-sizing: border-box;
+}
+</style>
+<script>
+$(document).ready(function(){
+    $(".start").click(function(){
+        $("p")
+            .animate({width: "100%"})
+            .animate({fontSize: "50px"})
+            .animate({borderWidth: 30});
+    });
+    $(".reset").click(function(){
+        $("p").removeAttr("style");
+    });
+});  
+</script>
+</head>
+<body>
+    <p>Css is most important lang</p>
+    <button type="button" class="start">Click</button>
+    <button type="button" class="reset">Reset</button>
+</body>
+</html>
